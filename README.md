@@ -1,12 +1,24 @@
-miseEnRoutePersonalHPC
-======================
+Installation et gestion des Personal HPC
+========================================
 
 Description étape par étape des choses à faire pour installer un Personal HPC
 
 
+## Installation
+
+Par défaut, nous installons et recommandons Ubuntu Server 12.04 LTS.
 
 
-## Configurer SSH
+## Mise à jour du système
+
+Dans ubuntu linux:
+
+```
+sudo apt-get update && sudo apt-get upgrade
+```
+
+
+## SSH
 
 ### Empêcher un login ssh par l'utilisateur root
 
@@ -44,3 +56,17 @@ Pour qu'il n'y ait plus que la dernière ligne affichée, "last login [...]", il
 session    optional     pam_motd.so  motd=/run/motd.dynamic noupdate
 session    optional     pam_motd.so # [1]
 ```
+
+
+### Denyhosts
+
+Pour installer denyhosts sous ubuntu server :
+```
+sudo apt-get install denyhosts
+```
+Denyhosts est un démon qui tourne automatiquement en tache de fond et se relance tout seul au démarrage.
+La configuration par défaut est bien, mais cela vaut le coup de paufiner (au coup par coup, il suffit de lire le fichier) :
+```
+/etc/ssh/sshd_config
+```
+
