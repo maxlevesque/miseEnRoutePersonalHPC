@@ -70,3 +70,8 @@ La configuration par défaut est bien, mais cela vaut le coup de paufiner (au co
 /etc/ssh/sshd_config
 ```
 
+Pour vérifier que le démon denyhosts tourne bien en tache de fond :
+```
+sudo service denyhosts status
+```
+
