@@ -20,6 +20,18 @@ sudo apt-get update && sudo apt-get upgrade
 
 ## SSH
 
+
+### Utiliser le login ssh par authentification key
+
+C'est plus sécurisé que le mail, car ce dernier peut être vu ou keyloggé. Par contre, quand le pc serait corrompu ou volé, tous les accès doivent être révoqués immédiatement.
+
+```
+cd
+ssh-keygen -t dsa
+cat .ssh/id_dsa.pub | ssh MONLOGIN@MAMACHINE "cat - >>.ssh/authorized_keys"
+```
+
+
 ### Empêcher un login ssh par l'utilisateur root
 
 Dans ubuntu server, dans `/etc/ssh/sshd_config`, il faut mettre `no` à l'option:
