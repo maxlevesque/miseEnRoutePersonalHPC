@@ -8,6 +8,21 @@ Description étape par étape des choses à faire pour installer un Personal HPC
 
 Par défaut, nous installons et recommandons Ubuntu Server 12.04 LTS.
 
+### Créer un compte
+
+Créer un utilisateur `igor` avec son /home/igor en une fois :
+```
+sudo adduser igor
+```
+
+### Mettre un utilisateur dans le groupe sudo
+
+Donner à l'utilisateur `igor` les droits sudo, i.e., lui permettre de faire `sudo <cmd>`.
+Executer la commande `visudo` et rajouter la ligne :
+```
+igor  ALL=(ALL) ALL
+```
+
 
 ## Mise à jour du système
 
