@@ -101,7 +101,7 @@ sudo apt-get install denyhosts
 Denyhosts est un démon qui tourne automatiquement en tache de fond et se relance tout seul au démarrage.
 La configuration par défaut est bien, mais cela vaut le coup de paufiner (au coup par coup, il suffit de lire le fichier) :
 ```
-/etc/ssh/sshd_config
+sudo vi /etc/denyhosts.conf
 ```
 
 Pour vérifier que le démon denyhosts tourne bien en tache de fond :
