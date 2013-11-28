@@ -23,6 +23,13 @@ Executer la commande `visudo` et rajouter la ligne :
 igor  ALL=(ALL) ALL
 ```
 
+### Changer l'éditeur de visudo
+
+Il faut rajouter la ligne suivante dans `visudo`:
+```
+Defaults  editor=/usr/bin/vim
+```
+
 
 ## Mise à jour du système
 
