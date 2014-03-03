@@ -39,6 +39,21 @@ Dans ubuntu linux:
 sudo apt-get update && sudo apt-get upgrade
 ```
 
+### GCC et Gfortran 4.8
+
+Dans Ubuntu Server 12.04 LTS, gcc est en version 4.6. La version 4.8 est nécessaire pour nombre de nos softs.
+```
+sudo apt-get update
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install gcc-4.8
+sudo apt-get install gfortran-4.8
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-4.8 50
+```
+
+
 
 ## SSH
 
