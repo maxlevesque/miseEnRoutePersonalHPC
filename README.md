@@ -1,29 +1,28 @@
-Installation et gestion des Personal HPC
+Installation d'une machine Personal HPC
 ========================================
 
 Description étape par étape des choses à faire pour installer un Personal HPC
 
+Par défaut, nous installons et recommandons Ubuntu Server 14.04 Long Term Support (LTS).
 
-## Installation
-
-Par défaut, nous installons et recommandons Ubuntu Server 12.04 LTS and 14.04 LTS.
-
-#### Créer un utilisateur `igor` avec son /home/igor en une fois
+#### Créer un utilisateur *igor* et son répertoire personnel /home/igor
 ```
 sudo adduser igor
 ```
-
 #### Installer vim
 ```
 sudo apt-get install vim
 ```
 #### Changer vim comme éditeur par défaut de visudo
+1/ Ouvrir visudo
+```
+sudo visudo
+```
+2/ Ajouter la ligne suivante
 ```
 Defaults        editor=/usr/bin/vim
 ```
-
-### Mettre un utilisateur dans le groupe sudo
-
+#### Ajouter un sudoer
 Donner à l'utilisateur `igor` les droits sudo, i.e., lui permettre de faire `sudo <cmd>`.
 Executer la commande `visudo` et rajouter la ligne :
 ```
