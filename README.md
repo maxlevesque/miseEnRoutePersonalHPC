@@ -128,7 +128,7 @@ sudo apt-get install gridengine-* xfonts-*
 - SGE cell name => *default*
 - SGE master hostname => *hostname*
 
-
+- Set fonts to traditional => *No*, *No*
 
 
 
