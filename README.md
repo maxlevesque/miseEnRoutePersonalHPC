@@ -6,13 +6,20 @@ Description étape par étape des choses à faire pour installer un Personal HPC
 
 ## Installation
 
-Par défaut, nous installons et recommandons Ubuntu Server 12.04 LTS.
+Par défaut, nous installons et recommandons Ubuntu Server 12.04 LTS and 14.04 LTS.
 
-### Créer un compte
-
-Créer un utilisateur `igor` avec son /home/igor en une fois :
+#### Créer un utilisateur `igor` avec son /home/igor en une fois
 ```
 sudo adduser igor
+```
+
+#### Installer vim
+```
+sudo apt-get install vim
+```
+#### Changer vim comme éditeur par défaut de visudo
+```
+Defaults        editor=/usr/bin/vim
 ```
 
 ### Mettre un utilisateur dans le groupe sudo
