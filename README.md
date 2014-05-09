@@ -127,10 +127,11 @@ sudo apt-get install gridengine-* xfonts-*
 - Automatic configuration => *Yes*
 - SGE cell name => *default*
 - SGE master hostname => *hostname*
-
 - Set fonts to traditional => *No*, *No*
 
-
+#### Configurer SGE
+Pour une configuration basique mais très fonctionnelle, le mieux est de suivre ce lien:
+http://scidom.wordpress.com/tag/parallel/
 
 
 
