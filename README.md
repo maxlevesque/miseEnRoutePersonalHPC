@@ -101,9 +101,11 @@ session    optional     pam_motd.so # [1]
 ```
 
 
-#### Denyhosts
+#### Installer et configurer Denyhosts
 
-Pour installer denyhosts sous ubuntu server :
+Denyhosts restreint les tentatives de connexion "louches": multiples tentatives de mot-de-passes, logins, etc.
+
+Pour installer denyhosts:
 ```
 sudo apt-get install denyhosts
 ```
@@ -117,4 +119,18 @@ Pour vérifier que le démon denyhosts tourne bien en tache de fond :
 ```
 sudo service denyhosts status
 ```
+
+#### Installer SGE, le gestionnaire de queue/jobs
+```
+sudo apt-get install gridengine-* xfonts-*
+```
+- Automatic configuration => *Yes*
+- SGE cell name => *default*
+- SGE master hostname => *hostname*
+
+
+
+
+
+
 
