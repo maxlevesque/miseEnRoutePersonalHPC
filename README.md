@@ -28,24 +28,14 @@ Executer la commande `visudo` et rajouter la ligne :
 ```
 igor  ALL=(ALL) ALL
 ```
-
-### Changer l'éditeur de visudo
-
-Il faut rajouter la ligne suivante dans `visudo`:
-```
-Defaults  editor=/usr/bin/vim
-```
-
-
-## Mise à jour du système
-
-Dans ubuntu linux:
-
+#### Mettre le système à jour
 ```
 sudo apt-get update && sudo apt-get upgrade
 ```
 
-### GCC et Gfortran 4.8
+
+#### Installer les compilateurs GCC et Gfortran 4.8
+TOUT CE PARAGRAPHE EST INUTILE SOUS UBUNTU 14.04LTS. IL EST VALABLE POUR 12.04LTS uniquement :
 
 Dans Ubuntu Server 12.04 LTS, gcc est en version 4.6. La version 4.8 est nécessaire pour nombre de nos softs.
 ```
@@ -59,31 +49,29 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
 sudo update-alternatives --install /usr/bin/gfortran gfortran /usr/bin/gfortran-4.8 50
 ```
 
-
-
-## SSH
-
-
-### Utiliser le login ssh par authentification key
-
-C'est plus sécurisé que le mail, car ce dernier peut être vu ou keyloggé. Par contre, quand le pc serait corrompu ou volé, tous les accès doivent être révoqués immédiatement.
-
+#### Générer une clé ssh
+Chaque utilisateur doit générer une clé ssh:
 ```
 cd
 ssh-keygen -t dsa
-cat .ssh/id_dsa.pub | ssh MONLOGIN@MAMACHINE "cat - >>.ssh/authorized_keys"
 ```
 
+#### Transférer sa clé ssh au serveur
+Remplacer MONLOGIN et SSHSERVER :
+```
+cat .ssh/id_dsa.pub | ssh MONLOGIN@SSHSERVER "cat - >>.ssh/authorized_keys"
+```
 
-### Empêcher un login ssh par l'utilisateur root
+Il est parfois nécessaire de créer un dossier ~/.ssh par `mkdir ~/.ssh`.
 
+#### Interdir le login ssh par root
 Dans ubuntu server, dans `/etc/ssh/sshd_config`, il faut mettre `no` à l'option:
 ```
 PermitRootLogin no
 ```
 
 
-### Simplifier le ssh banner, c'est à dire la bannière de connection
+#### Simplifier le ssh banner, c'est à dire la bannière de connection
 
 Avec ubuntu server, à chaque login ssh est affiché tout un tas d'information de ce type :
 ```
@@ -113,7 +101,7 @@ session    optional     pam_motd.so # [1]
 ```
 
 
-### Denyhosts
+#### Denyhosts
 
 Pour installer denyhosts sous ubuntu server :
 ```
