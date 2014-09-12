@@ -97,27 +97,11 @@ Pour une configuration basique mais fonctionnelle, le mieux est de suivre ce lie
 http://scidom.wordpress.com/tag/parallel/
 
 
+# How to create a live USB key
 
-
-## N'est plus valable pour 14.04 LTS mais était utile pour 12.04 LTS
-
-#### Installer et configurer Denyhosts
-
-Denyhosts restreint les tentatives de connexion "louches": multiples tentatives de mot-de-passes, logins, etc.
-
-Pour installer denyhosts:
-```
-sudo apt-get install denyhosts
-```
-Denyhosts est un démon qui tourne automatiquement en tache de fond et se relance tout seul au démarrage.
-La configuration par défaut est bien, mais cela vaut le coup de paufiner (au coup par coup, il suffit de lire le fichier) :
-```
-sudo vi /etc/denyhosts.conf
-```
-
-Pour vérifier que le démon denyhosts tourne bien en tache de fond :
-```
-sudo service denyhosts status
-```
-
-
+1.  Download a Fedora (or Ubuntu or ...) image, choose a USB stick that does not contain any data you need, and connect it 
+2.   Run Nautilus (Files) - for instance, open the Overview by pressing the Start/Super key, and type Files, then hit enter 
+3.    Find the downloaded image, right-click on it, go to Open With, and click Disk Image Writer 
+4.     Double-check you're really, really sure you don't need any of the data on the USB stick! 
+5.      Select your USB stick as the Destination, and click Start Restoring... 
+6.       Wait for the operation to complete, then reboot your computer, and do whatever you need to do to boot from a USB stick - often this will involve pressing or holding down F12, F2 or Del. 
