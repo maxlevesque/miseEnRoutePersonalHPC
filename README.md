@@ -105,3 +105,5 @@ http://scidom.wordpress.com/tag/parallel/
 4.     Double-check you're really, really sure you don't need any of the data on the USB stick! 
 5.      Select your USB stick as the Destination, and click Start Restoring... 
 6.       Wait for the operation to complete, then reboot your computer, and do whatever you need to do to boot from a USB stick - often this will involve pressing or holding down F12, F2 or Del. 
+
+source: https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB
