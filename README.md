@@ -107,3 +107,21 @@ http://scidom.wordpress.com/tag/parallel/
 6.       Wait for the operation to complete, then reboot your computer, and do whatever you need to do to boot from a USB stick - often this will involve pressing or holding down F12, F2 or Del. 
 
 source: https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB
+
+# How to know the frequency and the kind of RAM you have installed:
+```bash
+dmidecode |grep -P -A7 "^\tSize:.*MB" | egrep -v "Form Factor|Set:|Bank Locator:|Type Detail"
+```
+that returns, for my laptop:   
+```bash
+	Size: 8192 MB
+	Locator: ChannelA-DIMM0
+	Type: DDR3
+	Speed: 1600 MHz
+--
+	Size: 8192 MB
+	Locator: ChannelB-DIMM0
+	Type: DDR3
+	Speed: 1600 MHz
+```
+=> I have 2*8 GB of DDR3-1600MHz.
