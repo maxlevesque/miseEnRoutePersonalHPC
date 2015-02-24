@@ -1,5 +1,7 @@
-Installation d'une machine Personal HPC
-========================================
+Notes about installation and every-day use of a PersonalHPC computer
+=====================================================================
+
+## Installation and related steps
 
 Description étape par étape des choses à faire pour installer un Personal HPC
 
