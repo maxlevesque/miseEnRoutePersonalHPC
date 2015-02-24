@@ -108,7 +108,7 @@ http://scidom.wordpress.com/tag/parallel/
 
 source: https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB
 
-# How to know the frequency and the kind of RAM you have installed:
+# How much RAM and its frequency:
 ```bash
 dmidecode |grep -P -A7 "^\tSize:.*MB" | egrep -v "Form Factor|Set:|Bank Locator:|Type Detail"
 ```
@@ -125,3 +125,69 @@ that returns, for my laptop:
 	Speed: 1600 MHz
 ```
 => I have 2*8 GB of DDR3-1600MHz.
+
+# CPU temperature and power
+To check the temperature and power of your CPU, one needs lm-sensors:
+```bash
+sudo apt-get install lm-sensors
+```
+then,
+```bash
+sensors
+```
+that returns for example:
+```bash
+k10temp-pci-00c3
+Adapter: PCI adapter
+temp1:        +33.0°C  (high = +70.0°C)
+                       (crit = +70.0°C, hyst = +67.0°C)
+
+k10temp-pci-00cb
+Adapter: PCI adapter
+temp1:        +33.0°C  (high = +70.0°C)
+
+fam15h_power-pci-00c4
+Adapter: PCI adapter
+power1:       44.16 W  (crit = 115.17 W)
+
+k10temp-pci-00d3
+Adapter: PCI adapter
+temp1:        +27.0°C  (high = +70.0°C)
+                       (crit = +70.0°C, hyst = +67.0°C)
+
+k10temp-pci-00db
+Adapter: PCI adapter
+temp1:        +27.4°C  (high = +70.0°C)
+
+k10temp-pci-00e3
+Adapter: PCI adapter
+temp1:        +26.0°C  (high = +70.0°C)
+                       (crit = +70.0°C, hyst = +67.0°C)
+
+k10temp-pci-00eb
+Adapter: PCI adapter
+temp1:        +26.4°C  (high = +70.0°C)
+
+k10temp-pci-00f3
+Adapter: PCI adapter
+temp1:        +27.5°C  (high = +70.0°C)
+                       (crit = +70.0°C, hyst = +67.0°C)
+
+k10temp-pci-00fb
+Adapter: PCI adapter
+temp1:        +27.6°C  (high = +70.0°C)
+
+fam15h_power-pci-00d4
+Adapter: PCI adapter
+power1:       46.11 W  (crit = 115.17 W)
+
+fam15h_power-pci-00e4
+Adapter: PCI adapter
+power1:       44.94 W  (crit = 115.17 W)
+
+fam15h_power-pci-00f4
+Adapter: PCI adapter
+power1:       42.57 W  (crit = 115.17 W)
+```
+
+where all powers and temperature are indicated for my eight CPUs.
